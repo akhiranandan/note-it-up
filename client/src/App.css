@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  font-family: "poppins";
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 3rem;
+  border: whitesmoke;
+  border-radius: 1rem;
+  border-style: ridge;
+  padding: 1rem;
+}
+
+.sideHeader {
+  display: flex;
+  flex-direction: row; 
+  margin-left: 30rem;
+  justify-items: center;
+}
+
+.headerItem {
+  margin-right: 6rem;
+  margin-top: 1rem;
+}
+
+.notesContainer {
+  margin: 1rem 3rem;
+  display: flex;
+}
+
+.addNote {
+  height: 7rem;
+  border-style: groove;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.noteCard {
+  background-color: #a494c5;
+  height: 12.5rem;
+  width: 20rem;
+  padding: 30px;
+  margin: 10px;
+}
+
+.titleCard {
+  font-family: "poppins";
+  font-size: 1.25rem;
+  margin-bottom: 7px;
+  letter-spacing: 0.25rem;
+}
+
+.title2Card {
+  font-family: "poppins";
+  font-size: 1rem;
+  margin-bottom: 7px;
+}
+.contentCard {
+  text-overflow: ellipsis;
+}
+
+.NotesPage {
+  margin: 2rem;
+  color: black;
+  background-color: white;
+}
