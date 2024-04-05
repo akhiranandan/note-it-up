@@ -6,9 +6,12 @@ A simple and efficient web application for taking and managing notes. The app pr
 - Update Notes
 - Delete Notes
 
-  <img width="1440" alt="Screenshot 2024-04-05 at 7 53 47 PM" src="https://github.com/akhiranandan/note-it-up/assets/75657830/978d214f-e203-4276-a61b-a18206acdc15">
+<img width="1440" alt="Screenshot 2024-04-05 at 7 53 47 PM" src="https://github.com/akhiranandan/note-it-up/assets/75657830/978d214f-e203-4276-a61b-a18206acdc15">
 <img width="1440" alt="Screenshot 2024-04-05 at 8 03 40 PM" src="https://github.com/akhiranandan/note-it-up/assets/75657830/7a6a093b-5504-4661-a4dd-121f4c477114">
 
+# Notes stored in HTML format in the database.
+
+<img width="1249" alt="Screenshot 2024-04-05 at 8 19 03 PM" src="https://github.com/akhiranandan/note-it-up/assets/75657830/563fcf21-1129-4de9-b313-a7362f8e4121">
 
 # Code Setup
 1. Clone the repository:
@@ -41,7 +44,7 @@ npm run dev
 cd client
 ```
 
-6. Install the dependencies
+6. Install the dependencies:
 
 ```
 npm install
