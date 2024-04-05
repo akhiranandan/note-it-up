@@ -33,6 +33,8 @@
 .notesContainer {
   margin: 1rem 3rem;
   display: flex;
+  max-width: 90rem;
+  flex-wrap: wrap;
 }
 
 .addNote {

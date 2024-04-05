@@ -10,9 +10,10 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path:"/newNote",
-    element:<NotesPage/>
-  }
+    path: "/newNote",
+    element: <NotesPage />,
+  },
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
