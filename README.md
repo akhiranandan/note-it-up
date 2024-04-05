@@ -57,9 +57,15 @@ npm run dev
 ```
 
 # Hosted URL of frontend
-```
+
 https://note-it-up-app.netlify.app/
-```
+
+
+# Video Demo Link (Loom)
+
+https://www.loom.com/share/7fb5362b541f443ebc7ad74c2790df9f?sid=8bc7f67c-3a4b-4811-a1de-b0d2fad2d624
+
+
 # Code Structure
 ### Client Directory Structure
 - src/: This directory contains the source code of the React application.
