@@ -4,7 +4,6 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import axios from "axios";
 import "../App.css";
-import EmptyNote from "./EmptyNote";
 
 function NotesPage() {
   const location = useLocation();

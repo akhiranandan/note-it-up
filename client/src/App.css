@@ -89,3 +89,9 @@ body {
   max-height: 40rem;
   overflow: scroll;
 }
+
+.cardTitle {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
