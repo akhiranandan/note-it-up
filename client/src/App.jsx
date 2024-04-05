@@ -74,8 +74,7 @@ function App() {
               handleClick(item);
             }}
           >
-          <h1 className="cardTitle">{item.title}</h1>
-          
+            <h1 className="cardTitle">{item.title}</h1>
           </motion.div>
         ))}
       </div>
