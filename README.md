@@ -49,4 +49,8 @@ npm install
 npm run dev
 ```
 
+# Hosted URL of frontend
+```
+https://chic-mooncake-f6a4f5.netlify.app/
+```
 # Code Structure
