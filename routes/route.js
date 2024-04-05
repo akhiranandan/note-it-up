@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Post } = require("../models/Post");
 
+// Adding note to the database
 router.post("/add", (req, res) => {
   const post = new Post(req.body);
   post.save((err) => {
@@ -9,6 +10,7 @@ router.post("/add", (req, res) => {
   });
 });
 
+// getting all notes from database
 router.get("/", (req, res) => {
   Post.find().exec((err, posts) => {
     if (err) return res.status(400).json({ success: false, err });
@@ -16,6 +18,7 @@ router.get("/", (req, res) => {
   });
 });
 
+// updating a note using id
 router.put("/update/:id", (req, res) => {
   Post.findByIdAndUpdate(
     req.params.id,
@@ -29,6 +32,7 @@ router.put("/update/:id", (req, res) => {
   );
 });
 
+// deleting a note using id
 router.delete("/delete/:id", (req, res)=> {
     Post.findByIdAndRemove(req.params.id).exec((err, deleteItem)=>{
         if(err){

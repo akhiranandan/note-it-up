@@ -23,6 +23,7 @@ function NotesPage() {
   const handleUpdate = async (id) => {
     notes.title = inputValue;
     await axios.put(`http://localhost:4000/posts/update/${id}`, notes);
+    navigateTo("/");
   };
   const handleDelete = async (id) => {
     await axios.delete(`http://localhost:4000/posts/delete/${id}`, notes);

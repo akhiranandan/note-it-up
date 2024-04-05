@@ -30,6 +30,7 @@ function App() {
       },
     });
   };
+  // Assigning new color to each note
   const colors = [
     "#D9EDF8",
     "#FFADAD",
