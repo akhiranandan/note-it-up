@@ -73,3 +73,7 @@
   color: black;
   background-color: white;
 }
+
+.saveButton {
+  margin-right: 3rem;
+}

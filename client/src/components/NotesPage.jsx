@@ -13,6 +13,9 @@ function NotesPage() {
   const handleUpdate = async (id) => {
     await axios.put(`http://localhost:4000/posts/update/${id}`, notes);
   };
+  const handleDelete = async (id) => {
+    await axios.delete(`http://localhost:4000/posts/delete/${id}`, notes);
+  };
   const location = useLocation()
   const { title, description, id, isNew } = location.state;
 
@@ -41,6 +44,7 @@ function NotesPage() {
       <button className="saveButton" onClick={()=>{isNew ? handleSave() : handleUpdate(id)}}>
         Save
       </button>
+      <button className="deleteButton" onClick={() => handleDelete(id)}>Delete</button>
     </div>
   );
 }

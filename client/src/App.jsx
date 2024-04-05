@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import Plusicon from "./assets/plus-icon.png";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -14,7 +13,6 @@ function App() {
     try {
       const response = await axios.get("http://localhost:4000/posts");
       setData(response.data.posts);
-      console.log(data);
     } catch (err) {
       console.log(err);
     }
@@ -39,8 +37,8 @@ function App() {
           <Link
             to="/newNote"
             state={{
-              title: "herll",
-              description: "<p>text here</p>",
+              title: "My Note",
+              description: "<p></p>",
               id: "",
               isNew: true,
             }}
@@ -64,7 +62,6 @@ function App() {
             }}
           >
             <h1 className="titleCard">{item.title}</h1>
-            <p className="contentCard">{item.description}</p>
           </motion.div>
         ))}
       </div>
