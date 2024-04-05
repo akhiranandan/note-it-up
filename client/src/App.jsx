@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Logo from "./assets/n logo.jpeg";
+import Button from "@mui/material/Button";
 
 function App() {
   const [data, setData] = useState([]);
@@ -37,36 +38,40 @@ function App() {
     "#DEDAF4",
     "#C9E4DE",
     "#F2C6DE",
-  ]; // Array of colors
-  const getColor = (index) => colors[index % colors.length]; // Function to get color based on index
+  ];
+  const getColor = (index) => colors[index % colors.length];
   return (
     <div className="App">
+    {/* HEADER IN HOME PAGE */}
       <div className="header">
         <h1 className="logo">Note It Up</h1>
         <img src={Logo} className="nLogo" />
         <div className="sideHeader">
+        {/* BUTTON FOR NEW NOTE */}
           <Link
             to="/newNote"
             state={{
-              title: "My Note",
+              title: "",
               description: "<p></p>",
               id: "",
               isNew: true,
             }}
             style={{ textDecoration: "none", color: "black" }}
           >
-            <p className="headerItem">New Note +</p>
+            <Button variant="contained" className="newNoteButton">
+              New Note +
+            </Button>
           </Link>
-          <p className="headerItem">Archives</p>
-          <p className="headerItem">Trash</p>
         </div>
       </div>
+      {/* NOTES CONTAINER */}
       <div className="notesContainer">
         {data.map((item, index) => (
           <motion.div
             className="noteCard"
             whileHover={{
               scale: 1.05,
+              boxShadow: "0 0 25px black",
             }}
             id={index}
             style={{ backgroundColor: getColor(index) }}
@@ -75,6 +80,7 @@ function App() {
             }}
           >
             <h1 className="cardTitle">{item.title}</h1>
+            <p className="cardText" dangerouslySetInnerHTML={{__html:item.description}}></p>
           </motion.div>
         ))}
       </div>
