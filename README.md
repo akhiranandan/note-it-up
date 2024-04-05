@@ -55,7 +55,7 @@ npm run dev
 
 # Hosted URL of frontend
 ```
-https://chic-mooncake-f6a4f5.netlify.app/
+https://note-it-up-app.netlify.app/
 ```
 # Code Structure
 ### Client Directory Structure
