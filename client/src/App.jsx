@@ -3,6 +3,7 @@ import "./App.css";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Logo from "./assets/n logo.jpeg";
 
 function App() {
   const [data, setData] = useState([]);
@@ -28,11 +29,21 @@ function App() {
       },
     });
   };
-
+  const colors = [
+    "#D9EDF8",
+    "#FFADAD",
+    "#FFD6A5",
+    "#FDFFB6",
+    "#DEDAF4",
+    "#C9E4DE",
+    "#F2C6DE",
+  ]; // Array of colors
+  const getColor = (index) => colors[index % colors.length]; // Function to get color based on index
   return (
     <div className="App">
       <div className="header">
         <h1 className="logo">Note It Up</h1>
+        <img src={Logo} className="nLogo" />
         <div className="sideHeader">
           <Link
             to="/newNote"
@@ -42,6 +53,7 @@ function App() {
               id: "",
               isNew: true,
             }}
+            style={{ textDecoration: "none", color: "black" }}
           >
             <p className="headerItem">New Note +</p>
           </Link>
@@ -57,11 +69,13 @@ function App() {
               scale: 1.05,
             }}
             id={index}
+            style={{ backgroundColor: getColor(index) }}
             onClick={() => {
               handleClick(item);
             }}
           >
-            <h1 className="titleCard">{item.title}</h1>
+          <h1>{item.title}</h1>
+          
           </motion.div>
         ))}
       </div>

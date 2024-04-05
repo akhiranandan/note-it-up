@@ -2,10 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "poppins";
 }
 
-.App {
-  font-family: "poppins";
+body {
+  background-color:#FBFFF4;
 }
 
 .header {
@@ -16,24 +17,29 @@
   border-radius: 1rem;
   border-style: ridge;
   padding: 1rem;
+  justify-content: space-between;
 }
 
 .sideHeader {
   display: flex;
-  flex-direction: row; 
-  margin-left: 30rem;
+  flex-direction: row;
   justify-items: center;
 }
 
 .headerItem {
-  margin-right: 6rem;
+  margin-right: 2rem;
   margin-top: 1rem;
+}
+
+.nLogo {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 360px;
 }
 
 .notesContainer {
   margin: 1rem 3rem;
   display: flex;
-  max-width: 90rem;
   flex-wrap: wrap;
 }
 
@@ -47,9 +53,10 @@
 .noteCard {
   background-color: #a494c5;
   height: 12.5rem;
-  width: 20rem;
+  width: 19rem;
   padding: 30px;
   margin: 10px;
+  border-radius: 1rem;
 }
 
 .titleCard {
@@ -76,4 +83,9 @@
 
 .saveButton {
   margin-right: 3rem;
+}
+
+.ckEditor {
+  max-height: 40rem;
+  overflow: scroll;
 }

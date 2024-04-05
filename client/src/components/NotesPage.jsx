@@ -1,28 +1,60 @@
 import React, { useState } from "react";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import axios from "axios";
 import "../App.css";
+import EmptyNote from "./EmptyNote";
 
 function NotesPage() {
-  const [notes, setNotes] = useState({ title: "", description: "" });
+  const location = useLocation();
+  const { title, description, id, isNew } = location.state;
+  const [notes, setNotes] = useState({
+    title: title,
+    description: description,
+  });
   const handleSave = async () => {
     await axios.post("http://localhost:4000/posts/add", notes);
   };
   const handleUpdate = async (id) => {
+    notes.title = inputValue;
     await axios.put(`http://localhost:4000/posts/update/${id}`, notes);
   };
   const handleDelete = async (id) => {
     await axios.delete(`http://localhost:4000/posts/delete/${id}`, notes);
   };
-  const location = useLocation()
-  const { title, description, id, isNew } = location.state;
 
+  const handleTitle = (event) => {
+    const temp = event.target.value;
+    console.log(event.target.value);
+    setNotes({ ...notes, title: temp });
+  };
+  const [inputValue, setInputValue] = useState(title);
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
   return (
     <div className="NotesPage">
-      <h2>{title}</h2>
-      <input/>
+      <div className="notesPageHeader">
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          placeholder="Type something..."
+        />
+        <button
+          className="saveButton"
+          onClick={() => {
+            isNew ? handleSave() : handleUpdate(id);
+          }}
+        >
+          Save
+        </button>
+        <button className="deleteButton" onClick={() => handleDelete(id)}>
+          Delete
+        </button>
+      </div>
+      <div className="ckEditor">
       <CKEditor
         editor={ClassicEditor}
         data={description}
@@ -31,20 +63,11 @@ function NotesPage() {
           console.log("Editor is ready to use!", editor);
         }}
         onChange={(event, editor) => {
-          setNotes({ ...notes, description: editor.getData(), title: "xyz" });
+          setNotes({ ...notes, description: editor.getData() });
           console.log(notes);
         }}
-        onBlur={(event, editor) => {
-          console.log("Blur.", editor);
-        }}
-        onFocus={(event, editor) => {
-          console.log("Focus.", editor);
-        }}
       />
-      <button className="saveButton" onClick={()=>{isNew ? handleSave() : handleUpdate(id)}}>
-        Save
-      </button>
-      <button className="deleteButton" onClick={() => handleDelete(id)}>Delete</button>
+      </div>
     </div>
   );
 }
